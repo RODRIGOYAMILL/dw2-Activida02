@@ -1,0 +1,321 @@
+  /*
+Descripcion: Actividad02 PROYECTO ADAPTADO
+Desarrollador: Rodrigo Yamill Rodriguez Avila
+Fecha: 2024-04-25
+Cambios: Ninguno
+*/
+
+  * {
+        margin: 0;
+        padding: 0;
+    }
+/* Añadir la imagen de fondo de la página*/
+    body {
+        
+        background-image: url('../img/fondoyamill.avif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        /* position: fixed; */
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    /* Estilo de fondo */
+.bgStyle {
+    background-color: #F9F7EF;
+}
+
+/* Estilo del encabezado */
+header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    z-index: 10000;
+}
+
+/* Estilo del logotipo */
+img#logo {
+    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Estilo del borde superior e inferior de la lista */
+.borderUl {
+    border-top: 1px solid #E66F69;
+    border-bottom: 1px solid #E66F69;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 300px;
+}
+
+/* Estilo de enlace */
+.linkStyle {
+    color: #186A65;
+    text-align: center;
+}
+
+/* Estilo del botón de menú */
+.btnMenu {
+    background: transparent;
+    color: #186A65;
+    border: none;
+}
+
+/* Estilo del botón de menú cuando está enfocado */
+.btnMenu:focus {
+    outline: none;
+}
+
+/* Estilo del contenedor de información */
+.containerInfo {
+    max-width: 80%;
+}
+
+
+    
+/* Estilo de la imagen */
+.imgstyle {
+    width: 320px;
+    margin-top: 30px;
+    border-radius: 100%;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo de texto de proyecto */
+.textProyect {
+    color: #186A65;
+    text-align: center;
+}
+
+/* Estilo de imágenes de logotipos */
+.imgLogos {
+    width: 120px;
+}
+
+/* Estilo de un contenedor con aspecto cosido */
+.stitched {
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(249, 247, 239, 0.8);
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    border: 2px dashed #1C6D68;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px #F9F7EF, 2px 1px 6px 4px rgba(10, 10, 0, 0.9);
+    font-weight: normal;
+}
+
+/* Estilo de un contenedor cosido para la página de inicio */
+.stitchedHome {
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(249, 247, 239, 0.8);
+    border: 2px dashed #1C6D68;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px #F9F7EF, 2px 1px 6px 4px rgba(10, 10, 0, 0.9);
+    top: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+/* Estilo del texto de logotipo */
+.textLogo {
+    font-size: 10px !important;
+    color: #1C6D68 !important;
+    text-align: center !important;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo del texto de tarjeta */
+.textCard {
+    color: #333333;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+/* Estilo del título de la tarjeta */
+.titleCard {
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo del botón */
+.btnStyle {
+    background-color: #1C6D68;
+    color: #fff;
+    transition: 0.5s;
+    width: 85%;
+    display: block;
+    margin: auto;
+    font-family: "arial";
+}
+
+/* Estilo del botón al pasar el cursor por encima */
+.btnStyle:hover {
+    background-color: #E66F69;
+    color: #fff;
+}
+
+/* Estilo del botón de proyecto */
+.btnProyect {
+    background-color: #1C6D68;
+    color: #fff;
+    transition: 0.5s;
+    width: 85%;
+    display: block;
+    margin: auto;
+    font-family: "arial";
+}
+    
+
+
+/* Estilo del botón de proyecto al pasar el cursor por encima */
+.btnProyect:hover {
+    background-color: #E66F69;
+    color: #fff;
+}
+
+/* Estilo del título de contacto */
+.titleContact {
+    color: #666;
+}
+
+/* Estilo de la imagen de la tarjeta */
+.imgCard {
+    border-radius: 8%;
+}
+
+/* Estilo del contenedor de tarjeta */
+.containerCard {
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    background-color: #F9F7EF;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Estilo de enlaces dentro del cuerpo de la tarjeta */
+.card-body a {
+    text-decoration: none;
+}
+
+/* Estilo de enlaces en la sección de proyectos */
+.linkProyect a {
+    text-decoration: none;
+}
+
+/* Estilos para las secciones con identificadores específicos */
+#quienSoy,
+#habilidades,
+#portafolio,
+#contacto {
+    width: 100%;
+    /* height: 100%; */
+    overflow: hidden;
+}
+
+/* Estilo de la sección de contacto */
+#contacto {
+    height: 100vh;
+}
+
+/* Estilo del título de la página */
+.titlePage {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin-top: 100px;
+    color: #E66F69;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+/* Estilo de los iconos */
+.styleIcon {
+    color: #E66F69;
+    font-size: 40px;
+    margin: 15px;
+}
+
+/* Estilo del contenedor de iconos de redes sociales */
+.iconRedSocial {
+    justify-content: center;
+    display: flex;
+}
+
+/* Estilo del enlace de correo */
+.styleLinkCorreo {
+    color: #1C6D68;
+}
+
+/* Estilo del enlace al repositorio */
+.linkRepo {
+    margin-top: -20px;
+}
+
+
+
+
+@media (max-width:767px) {
+    
+    .borderUl {
+        border: none;
+        width: 100%;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+
+    .containerInfo {
+        width: 100%;
+    }
+
+   
+    .imgLogos {
+        width: 170px;
+    }
+
+    
+    .containerCard {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width:450px) {
+    
+    .containerInfo {
+        max-width: 95%;
+    }
+}
+
+
+
+/* Estilos generales del botón */
+.btnStyle {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Estilos del texto del botón */
+.btnText {
+    display: inline-block;
+    max-width: 100%;
+}
+
+    

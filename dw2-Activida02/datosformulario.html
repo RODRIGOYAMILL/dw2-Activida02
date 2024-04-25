@@ -1,0 +1,179 @@
+<!-- Descripcion: Actividad02 PROYECTO ADAPTADO
+Desarrollador: Rodrigo Yamill Rodriguez Avila
+Fecha: 2024-04-25
+Cambios: Ninguno-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #448079; /* Color de fondo */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        #form-data {
+            margin: 20px auto;
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .btn-clear {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título del formulario -->
+    <h1>Datos del formulario</h1>
+    
+    <!-- Div contenedor de los datos y la tabla -->
+    <div id="form-data">
+        <!-- Tabla para mostrar los datos -->
+        <table id="data-table">
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Mensaje</th>
+            </tr>
+        </table>
+        
+        <!-- Enlace para limpiar los datos -->
+        <a href="#" class="btn-clear" onclick="limpiarDatos()">Limpiar</a>
+    </div>
+    
+    <!-- Script JavaScript -->
+    <script>
+        // Evento que se ejecuta cuando el DOM se ha cargado
+        window.addEventListener('DOMContentLoaded', function() {
+            // Obtener los parámetros de la URL
+            var params = new URLSearchParams(window.location.search);
+            
+            // Verificar si existen los parámetros necesarios en la URL
+            if (params.has('nombre') && params.has('email') && params.has('telefono') && params.has('message')) {
+                // Obtener los valores de los parámetros
+                var nombre = params.get('nombre');
+                var email = params.get('email');
+                var telefono = params.get('telefono');
+                var mensaje = params.get('message');
+                
+                // Guardar los datos en el almacenamiento local
+                guardarDatos(nombre, email, telefono, mensaje);
+            }
+        });
+
+        // Función para guardar los datos en el almacenamiento local
+        function guardarDatos(nombre, email, telefono, mensaje) {
+            // Obtener los datos existentes del almacenamiento local
+            var formData = localStorage.getItem('formData');
+            var data = formData ? JSON.parse(formData) : [];
+            
+            // Agregar los nuevos datos al arreglo de datos
+            data.push({nombre: nombre, email: email, telefono: telefono, mensaje: mensaje});
+            
+            // Guardar el arreglo actualizado en el almacenamiento local
+            localStorage.setItem('formData', JSON.stringify(data));
+            
+            // Mostrar los datos en la tabla
+            mostrarDatos();
+        }
+
+        // Función para mostrar los datos en la tabla
+        function mostrarDatos() {
+            var formDataDiv = document.getElementById('form-data');
+            var table = document.getElementById('data-table');
+            
+            // Obtener los datos del almacenamiento local
+            var formData = localStorage.getItem('formData');
+            
+            if (formData) {
+                // Parsear los datos en formato JSON
+                var data = JSON.parse(formData);
+                
+                // Crear la estructura de la tabla con encabezados
+                table.innerHTML = `
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Mensaje</th>
+                    </tr>
+                `;
+                
+                // Iterar sobre los datos y agregar filas a la tabla
+                data.forEach(function(item) {
+                    var newRow = table.insertRow(-1);
+                    var nombreCell = newRow.insertCell(0);
+                    var telefonoCell = newRow.insertCell(1);
+                    var emailCell = newRow.insertCell(2);
+                    var mensajeCell = newRow.insertCell(3);
+
+                    nombreCell.innerHTML = item.nombre;
+                    telefonoCell.innerHTML = item.telefono;
+                    emailCell.innerHTML = item.email;
+                    mensajeCell.innerHTML = item.mensaje;
+                });
+            } else {
+                // Mostrar un mensaje si no hay datos en el almacenamiento local
+                formDataDiv.innerHTML = '<p>No se han recibido datos del formulario.</p>';
+            }
+        }
+
+        // Función para limpiar los datos almacenados
+        function limpiarDatos() {
+            // Remover los datos del almacenamiento local
+            localStorage.removeItem('formData');
+            
+            // Limpiar la tabla y agregar encabezados vacíos
+            var table = document.getElementById('data-table');
+            table.innerHTML = `
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Mensaje</th>
+                </tr>
+            `;
+        }
+    </script>
+</body>
+</html>

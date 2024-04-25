@@ -1,0 +1,80 @@
+<!-- Descripcion: Actividad02 PROYECTO ADAPTADO
+Desarrollador: Rodrigo Yamill Rodriguez Avila
+Fecha: 2024-04-25
+Cambios: Ninguno-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rodrigo Yamill</title>
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- animate -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- mis estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon2.png">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bgStyle">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#" class="d-block m-auto">
+                <img src="img/LOGOYAMILL.png" width="220" alt="" class="d-md-none d-block">
+            </a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav borderUl justify-content-around">
+                    <li class="nav-item">
+                        <a class="nav-link linkStyle"> <button onclick="window.onload()" class="btnMenu"> Quién Soy</button></a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkStyle"><button onclick="window.view.habilidades()" class="btnMenu"> Habilidades</button></a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                </ul>
+                <a href="#quienSoy"><img src="img/LOGOYAMILL.png" alt="Logo" class="img-fluid d-md-block d-none" id="logo"></a>
+                <ul class="navbar-nav borderUl justify-content-around ">
+                    <li class="nav-item">
+                        <a class="nav-link linkStyle" href="#portafolio"><button onclick="window.view.portafolio()" class="btnMenu"> Portafolio</button></a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkStyle" href="#Formulario"><button onclick="window.view.contacto()" class="btnMenu">Formulario</button></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container-fluid m-0 p-0 animated fadeIn" id="content">
+        <!-- contenido portafolio -->
+    </div>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>
+    <!-- popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js "></script>
+    <!-- javascript bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "></script>
+    <!-- aos -->
+    <script src="js/view.js"></script>
+
+</body>
+
+</html>
